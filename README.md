@@ -19,3 +19,4 @@ CREATE TABLE tb_produtos (
     FOREIGN KEY(IDPRECO) REFERENCES tb_precos(IDPRECO)
 );
  
+INSERT INTO tb_precos (idpreco, preco) VALUES (1, 0);
