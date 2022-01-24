@@ -107,3 +107,13 @@
     font-size: 1em;
     width: 70px;
   }
+
+  .actions {
+     display: flex;
+      align-content: space-around;
+     
+  }
+
+  .actions form {
+    margin: 0 10px;
+  }
