@@ -25,4 +25,4 @@ INSERT INTO tb_precos (idpreco, preco) VALUES (1, 0);
 
 
 ## Tela Inicial
-![image](https://user-images.githubusercontent.com/51513403/150868036-4233ef49-d569-4a2c-8e84-13e1626ecd53.png)
+![image](https://user-images.githubusercontent.com/51513403/150870937-cac4b2c3-ca12-4259-adbb-0299e357a1f0.png)
