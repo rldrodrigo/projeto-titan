@@ -20,3 +20,5 @@ CREATE TABLE tb_produtos (
 );
  
 INSERT INTO tb_precos (idpreco, preco) VALUES (1, 0);
+
+É necessário já ter um registro criado para não dar erro
