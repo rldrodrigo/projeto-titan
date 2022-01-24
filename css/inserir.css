@@ -4,7 +4,6 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-
 .topo {
     height: 50px;
 }
@@ -34,6 +33,7 @@
 .conteudo th, .conteudo td {
     padding: 15px;
 }
+
 
 .button {
     background-color: #4CAF50; /* Green */
@@ -86,24 +86,30 @@
   .active {
     background-color: #04AA6D;
     text-decoration: none;
-  }
+}
 
+form { 
+    background-color: gray;
+    width: 80%;
+    height: 100%;
+    padding: 15px;
+}
 
-  /* Configuração de cores do desconto no painel principal*/
-.AZUL {
-    background: rgb(120, 160, 247);
-    font-size: 1em;
-    width: 70px;
-  }
+form input {
+    display: block;
+    width: 80%;
+    height: 35px;
+    margin: 20px;
+}
 
-  .VERMELHO {
-    background: rgb(240, 73, 73);
-    font-size: 1em;
-    width: 70px;
-  }
+form select {
+    display: block;
+    width: 80%;
+    height: 35px;
+    margin: 20px;
+}
 
-  .AMARELO {
-    background: rgb(252, 255, 96);
-    font-size: 1em;
-    width: 70px;
-  }
+form input .button {
+    display: block;
+    width: 60%;
+}

@@ -4,9 +4,6 @@
 <head>
     <title> Teste Titan Software</title>
     <link href="css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -35,27 +32,39 @@
                 </tr>
 
                 <?php
-                $link = mysqli_connect("localhost", "root", "", "loja-titan");
+                $link = mysqli_connect("localhost", "root", "", "projeto-titan");
                 mysqli_set_charset($link, "utf-8");
-                $sql = mysqli_query($link, 'SELECT * from produtos') or die("Erro");
+
+                $sql = mysqli_query($link, 'SELECT * from tb_produtos') or die("Erro");
                 while ($dados = mysqli_fetch_assoc($sql)) {
                     echo "<tr>";
-                    echo "<td>" . $dados['nome'] . "</td>";
-                    echo "<td>" . $dados['preco'] . "</td>";
-                    echo "<td>" . $dados['cor'] . "</td>";
+                    echo "<td>" . $dados['NOME'] . "</td>";
+                    $sql2 = mysqli_query($link, 'SELECT * FROM tb_precos WHERE idpreco = ' . $dados['IDPRECO']) or die("Erro");
+                    while ($dados2 = mysqli_fetch_assoc($sql2)) {
+                        $number = sprintf('%.2f', $dados2['PRECO']);
+                        if ($dados['COR'] === 'VERMELHO' && $number > 50) {
+                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.05)) . "</td>";
+                        } else if ($dados['COR'] === 'AMARELO') {
+                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.1)) . "</td>";
+                        } else if ($dados['COR'] == 'AZUL' || $dados['COR'] === 'VERMELHO') {
+                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.2)) . "</td>";
+                        }
+                    }
+                    if ($dados['COR'] === 'VERMELHO' && $number > 50)
+                        echo "<td class='" . $dados['COR'] . "'>5% OFF</td>";
+                    else if ($dados['COR'] === 'AZUL')
+                        echo "<td class='" . $dados['COR'] . "'>20% OFF</td>";
+                    else if ($dados['COR'] === 'AMARELO')
+                        echo "<td class='" . $dados['COR'] . "'>10% OFF</td>";
+                    else if ($dados['COR'] === 'VERMELHO')
+                        echo "<td class='" . $dados['COR'] . "'> 20% OFF</td>";
+                    echo " <td>
+                            <button class='btn-action'><img src='./img/edit-solid.svg' class='icone' /></button>
+                            <button class='btn-action'><img src='./img/trash-alt-regular.svg' class='icone' /></button>
+                        </td>";
                 }
 
                 ?>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button class="btn-action"><img src="./img/edit-solid.svg" class="icone" /></button>
-                        <button class="btn-action"><img src="./img/trash-alt-regular.svg" class="icone" /></button>
-                    </td>
-                </tr>
             </table>
         </div>
     </div>
