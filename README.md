@@ -22,3 +22,7 @@ CREATE TABLE tb_produtos (
 INSERT INTO tb_precos (idpreco, preco) VALUES (1, 0);
 
 É necessário já ter um registro criado para não dar erro
+
+
+## Tela Inicial
+![image](https://user-images.githubusercontent.com/51513403/150868036-4233ef49-d569-4a2c-8e84-13e1626ecd53.png)
