@@ -11,7 +11,7 @@ Instale a versão do PHP 7.4 <br/>
 ### Crie as tabelas do banco
 
 CREATE TABLE tb_precos(
-	IDPRECO INT NOT NULL PRIMARY,
+	IDPRECO INT NOT NULL PRIMARY KEY,
     PRECO FLOAT NOT NULL
 );
 
