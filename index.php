@@ -23,6 +23,28 @@
             <div>
                 <a href="inserir.php"><button class="button">Inserir</button></a>
             </div>
+
+            <form action="filtrar.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o Nome:">
+                <label for="preco">Preço:</label>
+                <input type="text" id="preco" name="preco" placeholder="Digite o Preço:">
+                <select name="preco_tipo">
+                    <option value=""> Selecione: </option>
+                    <option value=">"> Maior </option>
+                    <option value="<"> Menor </option>
+                    <option value="="> Igual </option>
+                </select>
+                <label for="cor">Cor:</label>
+                <select id="cor" name="cor">
+                    <option value=""> Selecione: </option>
+                    <option value="AZUL"> Azul </option>
+                    <option value="AMARELO"> Amarelo </option>
+                    <option value="VERMELHO"> Vermelho </option>
+                </select>
+                <input type="submit" class="button enviar" value="Filtrar">
+            </form>
+
             <table>
                 <tr>
                     <th>Produtos</th>
