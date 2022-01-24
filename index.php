@@ -62,7 +62,7 @@
                             <form action='deletarProduto.php' method='post'> <input type = 'hidden' name='idprod' value='" . $dados['IDPROD'] . "' /> 
                                 <button type='submit' class='btn-action'><img src='./img/trash-alt-regular.svg' class='icone' /></button>
                             </form>
-                            <form action='alterarProduto.php' method='post'> <input type = 'hidden' name='idprod' value='" . $dados['IDPROD'] . "' /> 
+                            <form action='alterar.php' method='post'> <input type = 'hidden' name='idprod' value='" . $dados['IDPROD'] . "' /> 
                                 <button type='submit' class='btn-action'><img src='./img/edit-solid.svg' class='icone' /></button>
                              </form>
                         </td>";
