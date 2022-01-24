@@ -43,11 +43,11 @@
                     while ($dados2 = mysqli_fetch_assoc($sql2)) {
                         $number = sprintf('%.2f', $dados2['PRECO']);
                         if ($dados['COR'] === 'VERMELHO' && $number > 50) {
-                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.05)) . "</td>";
+                            echo "<td> <strike>R$ " . number_format($number, 2, ",", ".") . " </strike> <br>R$ " . number_format(($number - $number * 0.05), 2, ",", ".") . "</td>";
                         } else if ($dados['COR'] === 'AMARELO') {
-                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.1)) . "</td>";
+                            echo "<td> <strike>R$ " . number_format($number, 2, ",", ".") . " </strike> <br>R$ " . number_format(($number - $number * 0.1), 2, ",", ".") . "</td>";
                         } else if ($dados['COR'] == 'AZUL' || $dados['COR'] === 'VERMELHO') {
-                            echo "<td> <strike>R$ " . $number . " </strike> <br>R$ " . sprintf('%.2f', ($number - $number * 0.2)) . "</td>";
+                            echo "<td> <strike>R$ " .  number_format($number, 2, ",", ".") . " </strike> <br>R$ " . number_format(($number - $number * 0.2), 2, ",", ".") . "</td>";
                         }
                     }
                     if ($dados['COR'] === 'VERMELHO' && $number > 50)
