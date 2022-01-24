@@ -15,11 +15,11 @@ CREATE TABLE tb_produtos (
 	IDPROD INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     NOME VARCHAR(40) NOT NULL UNIQUE,
     COR VARCHAR(20) NOT NULL,
-    IDPRECO INT NOT NULL DEFAULT 1,
+    IDPRECO INT NOT NULL DEFAULT -1,
     FOREIGN KEY(IDPRECO) REFERENCES tb_precos(IDPRECO)
 );
  
-INSERT INTO tb_precos (idpreco, preco) VALUES (1, 0);
+INSERT INTO tb_precos (idpreco, preco) VALUES (-1, 0);
 
 É necessário já ter um registro criado para não dar erro
 
